@@ -1,0 +1,29 @@
+ 
+
+    
+<div class="container-fluid ">
+  <div class="row">
+  
+    <div class="col-lg-12 mb-3 mt-1">
+    <nav class="nav  navv m-auto  text-light ">
+      <p class="titl">Sports News</p>
+   <a *ngFor="let c of countries" (click)="changeCode(c.code)" class="nav-link" >{{c.name}}</a> 
+   <input [(ngModel)]="term"  class="form-control my-4  w-25 mx-auto "  placeholder="Search"/> 
+      </nav>
+    </div>
+  
+
+    <div *ngFor="let w of newsContainer | search:term " class="col-md-3">   
+      <div class="newsItem">
+       <a [href]="w.url" target="_blank">
+       <img [src]="w.urlToImage" alt="" class="img-fluid">
+        <h5>{{w.title}}</h5>
+        <p>{{w.description}}</p>
+      </a>
+      </div>
+
+
+    </div>
+</div>
+</div>
+
